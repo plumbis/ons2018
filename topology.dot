@@ -1,0 +1,26 @@
+graph vx {
+ "leaf01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.5.3" memory="768" config="./helper_scripts/extra_switch_config.sh" ]
+ "leaf02" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.5.3" memory="768" config="./helper_scripts/extra_switch_config.sh" ]
+ "leaf03" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.5.3" memory="768" config="./helper_scripts/extra_switch_config.sh" ]
+ "leaf04" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.5.3" memory="768" config="./helper_scripts/extra_switch_config.sh" ]
+ "spine01" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.5.3" memory="768" config="./helper_scripts/extra_switch_config.sh" ]
+ "spine02" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.5.3" memory="768" config="./helper_scripts/extra_switch_config.sh" ]
+ "netq-ts" [function="server" os="CumulusCommunity/netq-ts" memory="1024" ]
+ 
+ "leaf01":"swp51" -- "spine01":"swp1"
+ "leaf02":"swp51" -- "spine01":"swp2"
+ "leaf03":"swp51" -- "spine01":"swp3"
+ "leaf04":"swp51" -- "spine01":"swp4"
+
+ "leaf01":"swp52" -- "spine02":"swp1"
+ "leaf02":"swp52" -- "spine02":"swp2"
+ "leaf03":"swp52" -- "spine02":"swp3"
+ "leaf04":"swp52" -- "spine02":"swp4"
+
+ "leaf01":"swp49" -- "leaf02":"swp49"
+ "leaf01":"swp50" -- "leaf02":"swp50"
+ 
+ "leaf03":"swp49" -- "leaf04":"swp49"
+ "leaf03":"swp50" -- "leaf04":"swp50"
+}
+

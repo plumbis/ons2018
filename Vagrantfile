@@ -1,8 +1,8 @@
 # Created by Topology-Converter v5.0.0
 #    Template Revision: v5.0.0
 #    https://github.com/cumulusnetworks/topology_converter
-#    using topology data from: test.dot
-#    built with the following args: ['test.dot', '-c', '-p', 'libvirt', '-s', '3030']
+#    using topology data from: topology.dot
+#    built with the following args: ['topology.dot', '-c', '-p', 'libvirt', '-s', '3030']
 #    NOTE: in order to use this Vagrantfile you will need:
 #        - Vagrant(v2.0.2+) installed: http://www.vagrantup.com/downloads
 #        - the "helper_scripts" directory that comes packaged with topology-converter.py
@@ -108,7 +108,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -192,7 +192,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -291,13 +291,13 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
  
     # Transfer Bridge File
     device.vm.provision "file", source: "./helper_scripts/auto_mgmt_network/bridge-untagged", destination: "~/bridge-untagged"
-    device.vm.provision :shell , path: "./helper_scripts/OOB_switch_config.sh"
+    device.vm.provision :shell , path: "./helper_scripts/oob_switch_config.sh"
         
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -374,7 +374,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -433,8 +433,8 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
         
     # Run the Config specified in the Node Attributes
@@ -496,7 +496,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -555,8 +555,8 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
         
     # Run the Config specified in the Node Attributes
@@ -618,7 +618,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -677,8 +677,8 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
         
     # Run the Config specified in the Node Attributes
@@ -740,7 +740,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -799,8 +799,8 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
         
     # Run the Config specified in the Node Attributes
@@ -862,7 +862,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -921,8 +921,8 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
         
     # Run the Config specified in the Node Attributes
@@ -984,7 +984,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
@@ -1043,8 +1043,8 @@ Vagrant.configure("2") do |config|
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
     
-    #Copy over Topology.dot File
-    device.vm.provision "file", source: "test.dot", destination: "~/topology.dot"
+    # Copy over Topology.dot File
+    device.vm.provision "file", source: "topology.dot", destination: "~/topology.dot"
     device.vm.provision :shell, privileged: false, inline: "sudo mv ~/topology.dot /etc/ptm.d/topology.dot"
         
     # Run the Config specified in the Node Attributes
@@ -1105,7 +1105,7 @@ Vagrant.configure("2") do |config|
         
 
     end
-    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    # see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
     # NETWORK INTERFACES
