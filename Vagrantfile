@@ -185,7 +185,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "oob-mgmt-switch" do |device|
     
     device.vm.hostname = "oob-mgmt-switch"
-    device.vm.box = "cumuluscommunity/cumulus-vx"
+    device.vm.box = "CumulusCommunity/cumulus-vx"
 
     device.vm.provider "libvirt" do |v|      
         v.memory = 512    
