@@ -103,8 +103,7 @@ Vagrant.configure("2") do |config|
     device.vm.hostname = "oob-mgmt-server"
     device.vm.box = "yk0/ubuntu-xenial"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_oob-mgmt-server"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 512    
         
 
@@ -188,8 +187,7 @@ Vagrant.configure("2") do |config|
     device.vm.hostname = "oob-mgmt-switch"
     device.vm.box = "cumuluscommunity/cumulus-vx"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_oob-mgmt-switch"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 512    
         
 
@@ -371,8 +369,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.5.3"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_spine02"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 768    
         
 
@@ -494,8 +491,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.5.3"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_spine01"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 768    
         
 
@@ -617,8 +613,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.5.3"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_leaf04"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 768    
         
 
@@ -740,8 +735,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.5.3"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_leaf02"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 768    
         
 
@@ -863,8 +857,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.5.3"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_leaf03"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 768    
         
 
@@ -986,8 +979,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.5.3"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_leaf01"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 768    
         
 
@@ -1108,8 +1100,7 @@ Vagrant.configure("2") do |config|
     device.vm.hostname = "netq-ts"
     device.vm.box = "CumulusCommunity/netq-ts"
 
-    device.vm.provider "libvirt" do |v|
-        v.name = "#{simid}_netq-ts"      
+    device.vm.provider "libvirt" do |v|      
         v.memory = 1024    
         
 
