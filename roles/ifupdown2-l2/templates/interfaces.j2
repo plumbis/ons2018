@@ -1,0 +1,33 @@
+{% set intvars = interfaces[ansible_hostname] %}
+# /etc/network/interfaces template for switches ({{ansible_hostname}})
+# Created by Ansible
+
+auto lo
+iface lo inet loopback
+  address {{ intvars.loopback }}/32
+
+auto eth0
+iface eth0 inet dhcp
+    alias management interface
+    vrf mgmt
+
+auto mgmt
+iface mgmt
+    address 127.0.0.1/8
+    vrf-table auto
+
+{% if intvars.servers is defined %}
+{% for interface in intvars.servers %}
+auto {{ interface }}
+iface {{ interface }}
+
+{% endfor %}
+{% endif %}
+
+{% if intvars.fabric is defined %}
+{% for interface in intvars.fabric %}
+auto {{ interface }}
+iface {{ interface }}
+
+{% endfor %}
+{% endif %}

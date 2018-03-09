@@ -1,8 +1,8 @@
 #!/bin/bash
-# Created by Topology-Converter v5.0.0
-#    Template Revision: v5.0.0
+# Created by Topology-Converter v4.6.6
+#    Template Revision: v4.6.6
 #    https://github.com/cumulusnetworks/topology_converter
-#    using topology data from: test.dot
+#    using topology data from: topology.dot
 
 echo "################################################"
 echo "  Running Automatic Management Server Setup..."
@@ -15,8 +15,8 @@ echo " Detected vagrant user is: $username"
 #       KNOBS
 #######################
 
-REPOSITORY="https://github.com/CumulusNetworks/"
-REPONAME=""
+REPOSITORY="https://github.com/CumulusNetworks/cumulus-ci-cd"
+REPONAME="cumulus-ci-cd"
 
 #Install Automation Tools
 puppet=0
@@ -87,7 +87,6 @@ iface vagrant inet dhcp
 auto eth1
 iface eth1 inet static
     address 192.168.200.254/24
-
 EOT
 
 echo " ### Overwriting DNS Server to 8.8.8.8 ###"
@@ -120,7 +119,7 @@ filegen loopstats file loopstats type day enable
 filegen peerstats file peerstats type day enable
 filegen clockstats file clockstats type day enable
 
-server pool.ntp.org
+server clock.rdu.cumulusnetworks.com
 
 # By default, exchange time with everybody, but don't allow configuration.
 restrict -4 default kod notrap nomodify nopeer noquery
@@ -210,6 +209,9 @@ cat <<EOT >> /home/cumulus/.gitconfig
 [core]
     editor = vim
 EOT
+
+echo "sudo su - cumulus" >> /home/vagrant/.bash_profile
+echo "exit" >> /home/vagrant/.bash_profile
 
 echo "############################################"
 echo "      DONE!"

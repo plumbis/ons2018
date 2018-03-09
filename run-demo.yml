@@ -1,0 +1,20 @@
+---
+- hosts: leafs
+  become: yes
+  roles:
+    - ifupdown2-l2
+    - ntp
+    - frr
+
+- hosts: spines
+  become: yes
+  roles:
+    - ifupdown2-l2
+    - ntp
+    - frr
+
+# - hosts: servers
+#   become: yes
+#   roles:
+#     - ifupdown
+#     - frr-roh

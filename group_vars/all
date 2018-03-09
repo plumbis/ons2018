@@ -1,0 +1,124 @@
+# networking
+netq_ts: "192.168.200.2"
+nodes:
+    leaf01:
+        interfaces:
+            loopback: "10.0.0.11"
+            mgmt:
+                eth0:
+                    vrf: "vrf mgmt"
+        bgp:
+            asn: 65011
+            peers:
+                servers:
+                    swp1:
+                    swp2:
+                fabric:
+                    swp51:
+                    swp52:
+        
+    leaf02:
+        interfaces:
+            loopback: "10.0.0.12"
+        mgmt:
+                eth0:
+                    vrf: "vrf mgmt"
+        bgp:
+            asn: 65012
+            peers:
+                servers:
+                    swp1:
+                    swp2:
+                fabric:
+                    swp51:
+                    swp52:
+    leaf03:
+        interfaces:
+            loopback: "10.0.0.13"
+            mgmt:
+                eth0:
+                    vrf: "vrf mgmt"
+        bgp:
+            asn: 65013
+            peers:
+                servers:
+                    swp1:
+                    swp2:
+                fabric:
+                    swp51:
+                    swp52:
+    leaf04:
+        interfaces:
+            loopback: "10.0.0.14"
+            mgmt:
+                eth0:
+                    vrf: "vrf mgmt"
+        bgp:
+            asn: 65014
+            peers:
+                servers:
+                    swp1:
+                    swp2:
+                fabric:
+                    swp51:
+                    swp52:
+    spine01:
+        interfaces:
+            loopback: "10.0.0.21"
+            mgmt:
+                eth0:
+                    vrf: "vrf mgmt"
+        bgp:
+            asn: 65020
+            peers:
+            fabric:
+                swp1:
+                swp2:
+                swp3:
+                swp4:
+    spine02:
+        interfaces:
+            loopback: "10.0.0.22"
+            mgmt:
+                eth0:
+                    vrf: "vrf mgmt"
+        bgp:
+            asn: 65020
+            peers:
+            fabric:
+                swp1:
+                swp2:
+                swp3:
+                swp4:
+    server01:
+        interfaces:
+            loopback: "10.0.0.31"
+        bgp:
+            asn: 65101
+            peers:
+                eth1:
+                eth2:
+    server02:
+        interfaces:
+            loopback: "10.0.0.32"
+        bgp:
+            asn: 65102
+            peers:
+                eth1:
+                eth2:
+    server03:
+        interfaces:
+            loopback: "10.0.0.33"
+        bgp:
+            asn: 65103
+            peers:
+                eth1:
+                eth2:
+    server04:
+        interfaces:
+            loopback: "10.0.0.34"
+        bgp:
+            asn: 65104
+            peers:
+                eth1:
+                eth2:

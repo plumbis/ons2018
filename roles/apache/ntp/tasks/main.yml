@@ -1,0 +1,8 @@
+---
+- name: Configure NTP in management VRF
+  command: "{{item}}"
+  with_items:
+    - systemctl stop ntp.service
+    - systemctl disable ntp.service
+    - systemctl start ntp@mgmt
+  when: nodes.ansible_hostname.interfaces.mgmt is defined

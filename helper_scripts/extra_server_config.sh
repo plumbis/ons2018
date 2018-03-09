@@ -5,8 +5,10 @@ echo "  Running Extra_Server_Config.sh"
 echo "#################################"
 sudo su
 
-useradd cumulus -m 
+useradd cumulus -m -s /bin/bash
 echo "cumulus:CumulusLinux!" | chpasswd
+
+mkdir -p /home/cumulus/.ssh
 
 #Test for Debian-Based Host
 which apt &> /dev/null
@@ -16,19 +18,15 @@ if [ "$?" == "0" ]; then
     #Install LLDP
     apt-get update -qy && apt-get install lldpd -qy
     echo "configure lldp portidsubtype ifname" > /etc/lldpd.d/port_info.conf
-
-    #Replace existing network interfaces file
+    
+    # Replace existing network interfaces file
     echo -e "auto lo" > /etc/network/interfaces
     echo -e "iface lo inet loopback\n\n" >> /etc/network/interfaces
     echo -e  "source /etc/network/interfaces.d/*.cfg\n" >> /etc/network/interfaces
 
-    #Add vagrant interface
-    echo -e "\n\nauto vagrant" > /etc/network/interfaces.d/vagrant.cfg
-    echo -e "iface vagrant inet dhcp\n\n" >> /etc/network/interfaces.d/vagrant.cfg
-
     echo -e "\n\nauto eth0" > /etc/network/interfaces.d/eth0.cfg
-    echo -e "iface eth0 inet dhcp\n\n" >> /etc/network/interfaces.d/eth0.cfg
-
+    echo -e "iface eth0 inet dhcp" >> /etc/network/interfaces.d/eth0.cfg
+    echo -e "post-up wget -O /home/cumulus/.ssh/authorized_keys http://192.168.200.254/authorized_keys\n\n">> /etc/network/interfaces.d/eth0.cfg
     echo "retry 1;" >> /etc/dhcp/dhclient.conf
 fi
 
@@ -41,6 +39,10 @@ if [ "$?" == "0" ]; then
     echo -e "DEVICE=eth0\nBOOTPROTO=dhcp\nONBOOT=yes" > /etc/sysconfig/network-scripts/ifcfg-eth0
 fi
 
+echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
+
+# Disable AAAA records; speeds up APT for v4 only networks
+sed -i -e 's/#precedence ::ffff:0:0\/96  10/#precedence ::ffff:0:0\/96  100/g' /etc/gai.conf
 
 echo "#################################"
 echo "   Finished"
