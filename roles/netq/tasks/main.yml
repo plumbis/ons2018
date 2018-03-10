@@ -1,6 +1,6 @@
 ---
 - name: Add netq server IP
-  command: netq config add server {{netq_ts}} {{interfaces.ansible_hostname.vrf | default("")}}
+  command: netq config add server {{netq_ts}} {{interfaces[ansible_hostname]["vrf"] | default("")}}
 
 - name: Restart NetQ Agent
   command: netq config restart agent
