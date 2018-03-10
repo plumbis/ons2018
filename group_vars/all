@@ -145,7 +145,7 @@ nodes:
         interfaces:
             loopback: "10.0.0.2"
             physical:
-                eth1: "192.168.1.2"
+                eth2: "192.168.1.2"
             mgmt:
                 eth0:
                     vrf: ""
@@ -171,7 +171,7 @@ nodes:
         interfaces:
             loopback: "10.0.0.4"
             physical:
-                eth1: "192.168.1.4"
+                eth2: "192.168.1.4"
             mgmt:
                 eth0:
                     vrf: ""
