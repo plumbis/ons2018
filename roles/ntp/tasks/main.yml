@@ -12,7 +12,7 @@
   shell: "vrf task list | grep ntpd"
   register: ntp_vrf
   failed_when: ntp_vrf.rc >= 2
-  when: nodes[ansible_hostname]["interfaces"]["mgmt"] != ""
+  when: nodes[ansible_hostname]["interfaces"]["mgmt"]["eth0"]["vrf"] != ""
   tags: ntp
 
 - name: Configure NTP in management VRF
@@ -21,5 +21,5 @@
     - systemctl stop ntp.service
     - systemctl disable ntp.service
     - systemctl start ntp@mgmt
-  when: nodes[ansible_hostname]["interfaces"]["mgmt"] != "" and ntp_vrf.rc != 0
+  when: nodes[ansible_hostname]["interfaces"]["mgmt"]["eth0"]["vrf"] != "" and ntp_vrf.rc != 0
   tags: ntp
