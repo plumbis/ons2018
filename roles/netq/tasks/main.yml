@@ -9,13 +9,15 @@
   apt_repository:
     repo: deb https://apps3.cumulusnetworks.com/repos/deb xenial netq-1.2
     state: present
+    update_cache: no
   when: ansible_distribution_release == "xenial"
   tags: netq
-  
+
 - name: Add Cumulus Repo for Cumulus Linux
   apt_repository:
     repo: deb https://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-1.2
     state: present
+    update_cache: no
   when: ansible_distribution == "Debian"
   tags: netq
 
@@ -23,7 +25,6 @@
   apt:
     name: cumulus-netq
     state: latest
-    update_cache: no
   tags: netq
 
 - name: Check if netq is already configured
