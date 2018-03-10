@@ -1,8 +1,22 @@
 ---
+- name: Add Cumulus Apt Key
+  apt_key:
+    url: "https://apps3.cumulusnetworks.com/setup/cumulus-apps-deb.pubkey"
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: Add Cumulus Repo
+  apt_repository:
+    repo: deb https://apps3.cumulusnetworks.com/repos/deb xenial netq-1.2
+    state: present
+    update_cache: no
+  when: ansible_distribution_release == "xenial"
+
 - name: Add Cumulus Repo
   apt_repository:
     repo: deb https://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-1.2
     state: present
+  when: ansible_distribution == "Debian"
   tags: netq
 
 - name: Upgrade NetQ to 1.2.1
@@ -22,7 +36,22 @@
   tags: netq
   when: netq_config.stdout == ""
 
+- name: Restart Rsyslog
+  service:
+    name: rsyslog
+    state: restarted
+  when: netq_config.stdout == ""
+  tags: netq
+
+- name: Enable NetQ Service
+  service:
+    name: netqd
+    enabled: yes
+    state: started
+  tags: netq
+
 - name: Restart NetQ Agent
   command: netq config restart agent
   tags: netq
   when: netq_config.stdout == ""
+

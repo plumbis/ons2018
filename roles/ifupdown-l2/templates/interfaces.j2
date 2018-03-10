@@ -1,0 +1,15 @@
+# /etc/network/interfaces template for servers ({{ansible_hostname}})
+# Created by Ansible
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+{% for interface, address in nodes[ansible_hostname]["interfaces"]["physical"].items() %}
+auto {{ interface }}
+iface {{ interface }} inet manual
+   address {{ address }}
+ 
+{% endfor %}

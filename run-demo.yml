@@ -5,18 +5,17 @@
     - ifupdown2-l2
     - ntp
     - netq
-    # - frr
 
 - hosts: spines
   become: yes
   roles:
-    # - ifupdown2-l2
+    - ifupdown2-l2
     - ntp
     - netq
-    # - frr
 
-# - hosts: servers
-#   become: yes
-#   roles:
-#     - ifupdown
-#     - frr-roh
+
+- hosts: servers
+  become: yes
+  roles:
+    - ifupdown-l2
+    - netq
