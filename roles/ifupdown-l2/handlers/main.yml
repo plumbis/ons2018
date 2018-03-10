@@ -3,5 +3,5 @@
 # when making substantial changes to the networking stack
 # such as changing routes, etc, sometimes this
 # command fails and the only solution is to reboot the server.
-- name: reload networking legacy
+- name: reload legacy networking
   shell: ifdown --force -a && ifup --force -a
