@@ -18,10 +18,11 @@ iface mgmt
 {% for interface in nodes[ansible_hostname]["interfaces"]["bridge"] %}
 auto {{ interface }}
 iface {{ interface }}
+
 {% endfor %}
 
 auto bridge
 iface bridge
-    bridge-ports {%- for interface in nodes[ansible_hostname]["interfaces"]["bridge"] %}{% endfor %}
+    bridge-ports {%- for interface in nodes[ansible_hostname]["interfaces"]["bridge"] %} {{interface}} {% endfor %}
     bridge-vlan-aware yes
 
