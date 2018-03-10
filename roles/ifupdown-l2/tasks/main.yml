@@ -11,3 +11,4 @@
     src: interfaces.j2
     dest: /etc/network/interfaces
   notify: reload legacy networking
+  tags: interfaces
