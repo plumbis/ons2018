@@ -10,4 +10,4 @@
   template:
     src: interfaces.j2
     dest: /etc/network/interfaces
-  notify: reload networking legacy
+  notify: reload legacy networking

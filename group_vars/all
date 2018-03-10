@@ -128,7 +128,7 @@ nodes:
         interfaces:
             loopback: "10.0.0.1"
             physical:
-                eth1: "192.168.1.1/24"
+                eth1: "192.168.1.1"
             mgmt:
                 eth0:
                     vrf: ""
@@ -141,7 +141,7 @@ nodes:
         interfaces:
             loopback: "10.0.0.2"
             physical:
-                eth1: "192.168.1.2/24"
+                eth1: "192.168.1.2"
             mgmt:
                 eth0:
                     vrf: ""
@@ -154,7 +154,7 @@ nodes:
         interfaces:
             loopback: "10.0.0.3"
             physical:
-                eth1: "192.168.1.3/24"
+                eth1: "192.168.1.3"
             mgmt:
                 eth0:
                     vrf: ""
@@ -167,7 +167,7 @@ nodes:
         interfaces:
             loopback: "10.0.0.4"
             physical:
-                eth1: "192.168.1.4/24"
+                eth1: "192.168.1.4"
             mgmt:
                 eth0:
                     vrf: ""
