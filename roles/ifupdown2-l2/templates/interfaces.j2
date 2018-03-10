@@ -3,7 +3,7 @@
 
 auto lo
 iface lo inet loopback
-  address {{ intvars.loopback }}/32
+  address {{ nodes[ansible_hostname]["interfaces"]["loopback"] }}/32
 
 auto eth0
 iface eth0 inet dhcp
