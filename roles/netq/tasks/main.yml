@@ -20,9 +20,9 @@
 - name: Add netq server IP
   command: netq config add server {{netq_ts}} {{nodes[ansible_hostname]["interfaces"]["mgmt"]["eth0"]["vrf"] | default("")}}
   tags: netq
-  when: netq_config.stdout != ""
+  when: netq_config.stdout == ""
 
 - name: Restart NetQ Agent
   command: netq config restart agent
   tags: netq
-  when: netq_config.stdout != ""
+  when: netq_config.stdout == ""
