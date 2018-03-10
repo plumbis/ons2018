@@ -25,6 +25,7 @@
   apt:
     name: cumulus-netq
     state: latest
+    update_cache: yes
   tags: netq
 
 - name: Check if netq is already configured
