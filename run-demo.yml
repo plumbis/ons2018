@@ -2,16 +2,18 @@
 - hosts: leafs
   become: yes
   roles:
-    - ifupdown2-l2
+    # - ifupdown2-l2
     - ntp
-    - frr
+    - netq
+    # - frr
 
 - hosts: spines
   become: yes
   roles:
-    - ifupdown2-l2
+    # - ifupdown2-l2
     - ntp
-    - frr
+    - netq
+    # - frr
 
 # - hosts: servers
 #   become: yes
