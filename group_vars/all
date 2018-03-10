@@ -129,6 +129,9 @@ nodes:
             loopback: "10.0.0.1"
             physical:
                 eth1: "192.168.1.1/24"
+            mgmt:
+                eth0:
+                    vrf: ""
         bgp:
             asn: 65101
             peers:
@@ -139,6 +142,9 @@ nodes:
             loopback: "10.0.0.2"
             physical:
                 eth1: "192.168.1.2/24"
+            mgmt:
+                eth0:
+                    vrf: ""
         bgp:
             asn: 65102
             peers:
@@ -149,6 +155,9 @@ nodes:
             loopback: "10.0.0.3"
             physical:
                 eth1: "192.168.1.3/24"
+            mgmt:
+                eth0:
+                    vrf: ""
         bgp:
             asn: 65103
             peers:
@@ -159,6 +168,9 @@ nodes:
             loopback: "10.0.0.4"
             physical:
                 eth1: "192.168.1.4/24"
+            mgmt:
+                eth0:
+                    vrf: ""
         bgp:
             asn: 65104
             peers:
