@@ -9,7 +9,7 @@ iface eth0 inet dhcp
 
 {% for interface, address in nodes[ansible_hostname]["interfaces"]["physical"].items() %}
 auto {{ interface }}
-iface {{ interface }} inet manual
+iface {{ interface }} inet static
    address {{ address }}
    netmask 255.255.255.0
  
