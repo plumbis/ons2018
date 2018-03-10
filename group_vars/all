@@ -8,6 +8,7 @@ nodes:
                 eth0:
                     vrf: "vrf mgmt"
             bridge:
+                - swp1
                 - swp48
                 - swp49
                 - swp50
@@ -30,6 +31,7 @@ nodes:
                     eth0:
                         vrf: "vrf mgmt"
             bridge:
+                    - swp1
                     - swp48
                     - swp49
                     - swp50
@@ -51,6 +53,7 @@ nodes:
                 eth0:
                     vrf: "vrf mgmt"
             bridge:
+                - swp1
                 - swp48
                 - swp49
                 - swp50
@@ -72,6 +75,7 @@ nodes:
                 eth0:
                     vrf: "vrf mgmt"
             bridge:
+                - swp1
                 - swp48
                 - swp49
                 - swp50
