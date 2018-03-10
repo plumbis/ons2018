@@ -7,6 +7,12 @@ nodes:
             mgmt:
                 eth0:
                     vrf: "vrf mgmt"
+            bridge:
+                - swp48
+                - swp49
+                - swp50
+                - swp51
+                - swp52
         bgp:
             asn: 65011
             peers:
@@ -23,6 +29,12 @@ nodes:
         mgmt:
                 eth0:
                     vrf: "vrf mgmt"
+        bridge:
+                - swp48
+                - swp49
+                - swp50
+                - swp51
+                - swp52
         bgp:
             asn: 65012
             peers:
@@ -38,6 +50,12 @@ nodes:
             mgmt:
                 eth0:
                     vrf: "vrf mgmt"
+            bridge:
+                - swp48
+                - swp49
+                - swp50
+                - swp51
+                - swp52
         bgp:
             asn: 65013
             peers:
@@ -53,6 +71,12 @@ nodes:
             mgmt:
                 eth0:
                     vrf: "vrf mgmt"
+            bridge:
+                - swp48
+                - swp49
+                - swp50
+                - swp51
+                - swp52
         bgp:
             asn: 65014
             peers:
@@ -68,6 +92,11 @@ nodes:
             mgmt:
                 eth0:
                     vrf: "vrf mgmt"
+            bridge:
+                - swp1
+                - swp2
+                - swp3
+                - swp4
         bgp:
             asn: 65020
             peers:
@@ -82,6 +111,11 @@ nodes:
             mgmt:
                 eth0:
                     vrf: "vrf mgmt"
+            bridge:
+                - swp1
+                - swp2
+                - swp3
+                - swp4
         bgp:
             asn: 65020
             peers:

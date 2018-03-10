@@ -2,7 +2,7 @@
 - hosts: leafs
   become: yes
   roles:
-    # - ifupdown2-l2
+    - ifupdown2-l2
     - ntp
     - netq
     # - frr

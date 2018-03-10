@@ -16,18 +16,13 @@ iface mgmt
     address 127.0.0.1/8
     vrf-table auto
 
-{% if intvars.servers is defined %}
-{% for interface in intvars.servers %}
+{% for interface in nodes[ansible_hostname]["interfaces"]["bridge"] %}
 auto {{ interface }}
 iface {{ interface }}
-
 {% endfor %}
-{% endif %}
 
-{% if intvars.fabric is defined %}
-{% for interface in intvars.fabric %}
-auto {{ interface }}
-iface {{ interface }}
+auto bridge
+iface bridge
+    bridge-ports {%- for interface in nodes[ansible_hostname]["interfaces"]["bridge"] %}{% endfor %}
+    bridge-vlan-aware yes
 
-{% endfor %}
-{% endif %}
