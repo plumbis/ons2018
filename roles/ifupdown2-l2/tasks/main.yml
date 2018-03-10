@@ -5,4 +5,6 @@
   template:
     src: interfaces.j2
     dest: /etc/network/interfaces
+  tags:
+    - interfaces
   #notify: reload networking
