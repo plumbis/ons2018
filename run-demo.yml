@@ -18,4 +18,5 @@
   become: yes
   roles:
     - ifupdown-l2
+    - ntp
     - netq
