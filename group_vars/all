@@ -26,15 +26,15 @@ nodes:
     leaf02:
         interfaces:
             loopback: "10.0.0.12"
-        mgmt:
-                eth0:
-                    vrf: "vrf mgmt"
-        bridge:
-                - swp48
-                - swp49
-                - swp50
-                - swp51
-                - swp52
+            mgmt:
+                    eth0:
+                        vrf: "vrf mgmt"
+            bridge:
+                    - swp48
+                    - swp49
+                    - swp50
+                    - swp51
+                    - swp52
         bgp:
             asn: 65012
             peers:
