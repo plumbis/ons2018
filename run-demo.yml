@@ -20,3 +20,4 @@
     - ifupdown-l2
     - ntp
     - netq
+    - ping
