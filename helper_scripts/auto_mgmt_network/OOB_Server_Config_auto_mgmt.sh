@@ -210,6 +210,8 @@ cat <<EOT >> /home/cumulus/.gitconfig
     editor = vim
 EOT
 
+sudo su - cumulus -c 'git clone https://github.com/plumbis/ons2018 ons2018;'
+
 echo "sudo su - cumulus" >> /home/vagrant/.bash_profile
 echo "exit" >> /home/vagrant/.bash_profile
 
