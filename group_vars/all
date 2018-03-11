@@ -9,9 +9,6 @@ nodes:
                     vrf: "vrf mgmt"
             bridge:
                 - swp1
-                - swp48
-                - swp49
-                - swp50
                 - swp51
                 - swp52
         bgp:
@@ -32,9 +29,6 @@ nodes:
                         vrf: "vrf mgmt"
             bridge:
                     - swp2
-                    - swp48
-                    - swp49
-                    - swp50
                     - swp51
                     - swp52
         bgp:
@@ -54,9 +48,6 @@ nodes:
                     vrf: "vrf mgmt"
             bridge:
                 - swp1
-                - swp48
-                - swp49
-                - swp50
                 - swp51
                 - swp52
         bgp:
@@ -76,9 +67,6 @@ nodes:
                     vrf: "vrf mgmt"
             bridge:
                 - swp2
-                - swp48
-                - swp49
-                - swp50
                 - swp51
                 - swp52
         bgp:
