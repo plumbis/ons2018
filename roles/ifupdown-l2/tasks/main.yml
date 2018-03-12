@@ -1,9 +1,11 @@
 ---
-# Legacy ifupdown requires its own template, so we broke it out into a seperate
-# role. In theory, ifupdown2 is capable of running on hosts, but it takes some
-# work to install without having it conflict with other packages. For this demo,
-# legacy ifupdown does what we need.
-
+- name: Install bridge utilities
+  apt:
+    name: bridge-utils
+    state: latest
+    update_cache: no
+  tags: interfaces
+  
 # This configures the interfaces and sets the default internal route to point
 # to the leafs. If the configuration changes, ifupdown will be reloaded.
 - name: configure /etc/network/interfaces on the host (using legacy ifupdown)
