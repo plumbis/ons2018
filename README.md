@@ -17,24 +17,24 @@ The node named `netq-ts` (not drawn in the topology) exists only on the manageme
 The Vagrantfile assumes a server with KVM, Libvirt and Vagrant installed.
 
 First, launch the lab using Vagrant.
-`vagrant up oob-mgmt-server oob-mgmt-switch` 
-`vagrant up netq-ts` 
-`vagrant up leaf01 leaf02 leaf03 leaf04` 
-`vagrant up spine01 spine02 server01 server02 server03 server04` 
+`vagrant up oob-mgmt-server oob-mgmt-switch`  
+`vagrant up netq-ts`  
+`vagrant up leaf01 leaf02 leaf03 leaf04`  
+`vagrant up spine01 spine02 server01 server02 server03 server04`  
 
 Now, SSH to the oob-mgmt-server and provision the lab with Ansible.
-`vagrant ssh oob-mgmt-server` 
-`cd ons2018`
-`ansible-playbook configure_lab.yml`
+`vagrant ssh oob-mgmt-server`  
+`cd ons2018`  
+`ansible-playbook configure_lab.yml`  
 
 After this the lab will be fully configured and any node can be accessed from the oob-mgmt-server.
 
 ## Simulating an L2 Loop
 To simulate a L2 loop for 5 minutes before automatically correcting, run the playbook 
-`ansible-playbook create_loop.yml`
+`ansible-playbook create_loop.yml`  
 
 This will disable STP on all network devices for 5 minutes and then restore STP. 
 
-During this time a broadcast storm will begin and the nodes may not be accessable via SSH or Ansible. You may still be able to access the nodes via the Libvirt console with `virsh console <domain_name>`
+During this time a broadcast storm will begin and the nodes may not be accessable via SSH or Ansible. You may still be able to access the nodes via the Libvirt console with `virsh console <domain_name>`  
 
 After the STP loop is resolved, all devices should once again be reachable. 
