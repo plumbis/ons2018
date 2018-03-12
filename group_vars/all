@@ -9,18 +9,10 @@ nodes:
                     vrf: "vrf mgmt"
             bridge:
                 - swp1
+                - swp2
+                - swp50
                 - swp51
                 - swp52
-        bgp:
-            asn: 65011
-            peers:
-                servers:
-                    swp1:
-                    swp2:
-                fabric:
-                    swp51:
-                    swp52:
-        
     leaf02:
         interfaces:
             loopback: "10.0.0.12"
@@ -28,56 +20,11 @@ nodes:
                     eth0:
                         vrf: "vrf mgmt"
             bridge:
+                    - swp1
                     - swp2
+                    - swp50
                     - swp51
                     - swp52
-        bgp:
-            asn: 65012
-            peers:
-                servers:
-                    swp1:
-                    swp2:
-                fabric:
-                    swp51:
-                    swp52:
-    leaf03:
-        interfaces:
-            loopback: "10.0.0.13"
-            mgmt:
-                eth0:
-                    vrf: "vrf mgmt"
-            bridge:
-                - swp1
-                - swp51
-                - swp52
-        bgp:
-            asn: 65013
-            peers:
-                servers:
-                    swp1:
-                    swp2:
-                fabric:
-                    swp51:
-                    swp52:
-    leaf04:
-        interfaces:
-            loopback: "10.0.0.14"
-            mgmt:
-                eth0:
-                    vrf: "vrf mgmt"
-            bridge:
-                - swp2
-                - swp51
-                - swp52
-        bgp:
-            asn: 65014
-            peers:
-                servers:
-                    swp1:
-                    swp2:
-                fabric:
-                    swp51:
-                    swp52:
     spine01:
         interfaces:
             loopback: "10.0.0.21"
@@ -87,16 +34,6 @@ nodes:
             bridge:
                 - swp1
                 - swp2
-                - swp3
-                - swp4
-        bgp:
-            asn: 65020
-            peers:
-            fabric:
-                swp1:
-                swp2:
-                swp3:
-                swp4:
     spine02:
         interfaces:
             loopback: "10.0.0.22"
@@ -106,65 +43,26 @@ nodes:
             bridge:
                 - swp1
                 - swp2
-                - swp3
-                - swp4
-        bgp:
-            asn: 65020
-            peers:
-            fabric:
-                swp1:
-                swp2:
-                swp3:
-                swp4:
     server01:
         interfaces:
             loopback: "10.0.0.1"
             physical:
-                eth1: "192.168.1.1"
+                eth1:
+                eth2:
+            bridge:
+                ipv4: "192.168.1.1"
             mgmt:
                 eth0:
                     vrf: ""
-        bgp:
-            asn: 65101
-            peers:
-                eth1:
-                eth2:
     server02:
         interfaces:
             loopback: "10.0.0.2"
             physical:
-                eth2: "192.168.1.2"
+                eth1:
+                eth2:
+            bridge:
+                ipv4: "192.168.1.2"
             mgmt:
                 eth0:
                     vrf: ""
-        bgp:
-            asn: 65102
-            peers:
-                eth1:
-                eth2:
-    server03:
-        interfaces:
-            loopback: "10.0.0.3"
-            physical:
-                eth1: "192.168.1.3"
-            mgmt:
-                eth0:
-                    vrf: ""
-        bgp:
-            asn: 65103
-            peers:
-                eth1:
-                eth2:
-    server04:
-        interfaces:
-            loopback: "10.0.0.4"
-            physical:
-                eth2: "192.168.1.4"
-            mgmt:
-                eth0:
-                    vrf: ""
-        bgp:
-            asn: 65104
-            peers:
-                eth1:
-                eth2:
+
