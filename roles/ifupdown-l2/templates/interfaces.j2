@@ -15,5 +15,7 @@ iface {{ interface }} inet manual
 
 iface br0 inet static
   bridge_ports {% for interface in nodes[ansible_hostname]["interfaces"]["physical"] %}{{interface}} {% endfor %}
+  
   address {{ nodes[ansible_hostname]["interfaces"]["bridge"]["ipv4"] }}
   netmask 255.255.255.0
+   
