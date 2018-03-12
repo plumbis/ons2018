@@ -10,7 +10,6 @@ nodes:
             bridge:
                 - swp1
                 - swp2
-                - swp50
                 - swp51
                 - swp52
     leaf02:
@@ -22,7 +21,6 @@ nodes:
             bridge:
                     - swp1
                     - swp2
-                    - swp50
                     - swp51
                     - swp52
     spine01:
