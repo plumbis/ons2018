@@ -1,8 +1,6 @@
 [leafs]
 leaf01 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
 leaf02 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
-leaf03 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
-leaf04 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
 
 [spines]
 spine01 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
@@ -11,14 +9,6 @@ spine02 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=
 [servers]
 server01 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
 server02 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
-server03 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
-server04 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
-
-[servers]
-server01 ansible_user=cumulus ansible_ssh_pass=CumulusLinux!
-server02 ansible_user=cumulus ansible_ssh_pass=CumulusLinux!
-server03 ansible_user=cumulus ansible_ssh_pass=CumulusLinux!
-server04 ansible_user=cumulus ansible_ssh_pass=CumulusLinux!
 
 [network:children]
 leafs
