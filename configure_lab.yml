@@ -5,6 +5,7 @@
     - ifupdown2-l2
     - ntp
     - netq
+    - stp
 
 - hosts: spines
   become: yes
@@ -12,6 +13,7 @@
     - ifupdown2-l2
     - ntp
     - netq
+    - stp
 
 
 - hosts: servers

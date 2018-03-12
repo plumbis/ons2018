@@ -1,0 +1,7 @@
+---
+- name: Copy STP Script
+  copy:
+    src: stp_killer.sh
+    dest: /home/cumulus/stp_killer.sh
+  become: yes
+  become_user: cumulus

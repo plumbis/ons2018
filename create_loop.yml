@@ -1,0 +1,7 @@
+---
+- hosts: leafs,spines
+  gather_facts: no
+  tasks:
+    - shell: "(bash /home/cumulus/stp_killer.sh &)"
+      async: 10
+      poll: 0
