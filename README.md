@@ -19,8 +19,7 @@ The Vagrantfile assumes a server with KVM, Libvirt and Vagrant installed.
 First, launch the lab using Vagrant.  
 `vagrant up oob-mgmt-server oob-mgmt-switch`  
 `vagrant up netq-ts`  
-`vagrant up leaf01 leaf02 leaf03 leaf04`  
-`vagrant up spine01 spine02 server01 server02 server03 server04`  
+`vagrant up`  
 
 Now, SSH to the oob-mgmt-server and provision the lab with Ansible.  
 `vagrant ssh oob-mgmt-server`  
