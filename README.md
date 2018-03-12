@@ -1,6 +1,6 @@
 # ONS 2017
-This is a demo of Linux on both compute and network nodes. 
-![Clos Topology](https://github.com/plumbis/ons2018/blob/master/ons2018.png "Clos Topology")
+This is a demo of Linux on both compute and network nodes.  
+![Clos Topology](https://github.com/plumbis/ons2018/blob/master/ons2018.png "Clos Topology")  
 
 The network is built using Cumulus Linux within the network and Ubuntu hosts.
 
