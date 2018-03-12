@@ -14,17 +14,3 @@
     job: "ping -c 1 192.168.1.2"
   become: yes
   become_user: cumulus
-
-- name: Configure Server03 Ping Cronjob
-  cron:
-    name: "server ping"
-    job: "ping -c 1 192.168.1.3"
-  become: yes
-  become_user: cumulus
-
-- name: Configure Server04 Ping Cronjob
-  cron:
-    name: "server ping"
-    job: "ping -c 1 192.168.1.4"
-  become: yes
-  become_user: cumulus
