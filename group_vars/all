@@ -1,5 +1,5 @@
 # networking
-netq_ts: "192.168.200.2"
+netq_ts: "192.168.200.1"
 nodes:
     leaf01:
         interfaces:
