@@ -15,8 +15,8 @@ echo " Detected vagrant user is: $username"
 #       KNOBS
 #######################
 
-REPOSITORY="https://github.com/CumulusNetworks/cumulus-ci-cd"
-REPONAME="cumulus-ci-cd"
+REPOSITORY="https://github.com/CumulusNetworks/ons2018"
+REPONAME="ons2018"
 
 #Install Automation Tools
 puppet=0
@@ -214,6 +214,7 @@ sudo su - cumulus -c 'git clone https://github.com/plumbis/ons2018 ons2018;'
 
 echo "sudo su - cumulus" >> /home/vagrant/.bash_profile
 echo "exit" >> /home/vagrant/.bash_profile
+
 
 echo "############################################"
 echo "      DONE!"
