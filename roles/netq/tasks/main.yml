@@ -45,13 +45,6 @@
   when: netq_config.stdout == ""
   tags: netq
 
-- name: Enable NetQ Service
-  service:
-    name: netqd
-    enabled: yes
-    state: started
-  tags: netq
-
 - name: Restart NetQ Agent
   command: netq config restart agent
   tags: netq
