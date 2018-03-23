@@ -2,7 +2,7 @@
 # Ping script is so servers generate traffic to populate MAC tables
 - name: Configure Server01 Ping Cronjob
   cron:
-    name: "server ping"
+    name: "server1 ping"
     job: "ping -c 1 192.168.1.1"
   become: yes
   become_user: cumulus
@@ -10,7 +10,7 @@
 
 - name: Configure Server02 Ping Cronjob
   cron:
-    name: "server ping"
+    name: "server2 ping"
     job: "ping -c 1 192.168.1.2"
   become: yes
   become_user: cumulus
