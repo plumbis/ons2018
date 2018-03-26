@@ -1,5 +1,5 @@
 ---
-- hosts: leafs,spines
+- hosts: leafs
   gather_facts: no
   tasks:
     - shell: "(bash /home/cumulus/stp_killer.sh &)"
