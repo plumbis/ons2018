@@ -26,4 +26,7 @@ iface bridge
     bridge-ports {% for interface in nodes[ansible_hostname]["interfaces"]["bridge"] %}{{interface}} {% endfor %}
     
     bridge-vlan-aware yes
+    {% if ansible_hostname == "spine02" %}
+    mstpctl-treeprio 4096
+    {% endif %}
 
