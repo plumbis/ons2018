@@ -16,7 +16,7 @@
   gather_facts: no
   tasks:
     - command: netq leaf01 show stp topology
-      result: netq
+      register: netq
 
     - debug: 
         msg: "{{ netq }}"
