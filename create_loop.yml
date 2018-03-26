@@ -11,3 +11,9 @@
   tasks:
     - command: ping -c 1 192.168.1.200
       ignore_errors: yes
+
+- hosts: netq-ts
+  gather_facts: no
+  tasks:
+    - command: netq leaf01 show stp topology
+    
