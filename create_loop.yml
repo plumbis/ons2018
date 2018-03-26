@@ -1,5 +1,5 @@
 ---
-- hosts: leafs
+- hosts: spines
   gather_facts: no
   tasks:
     - shell: "(bash /home/cumulus/stp_killer.sh &)"
@@ -16,4 +16,3 @@
   gather_facts: no
   tasks:
     - command: netq leaf01 show stp topology
-    

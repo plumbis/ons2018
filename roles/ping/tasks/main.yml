@@ -6,11 +6,3 @@
     job: "ping -c 1 192.168.1.1"
   become: yes
   become_user: cumulus
-
-
-- name: Configure Server02 Ping Cronjob
-  cron:
-    name: "server2 ping"
-    job: "ping -c 1 192.168.1.2"
-  become: yes
-  become_user: cumulus

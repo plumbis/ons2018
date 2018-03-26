@@ -1,3 +1,5 @@
+netq-ts ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
+
 [leafs]
 leaf01 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
 leaf02 ansible_user=cumulus ansible_ssh_pass=CumulusLinux! ansible_become_pass=CumulusLinux!
