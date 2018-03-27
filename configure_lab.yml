@@ -23,14 +23,17 @@
     - netq
     - ping
 
-- hosts: leaf01
+- hosts: leaf01, spine01
   gather_facts: no
   become: yes
   tasks:
-    - command: ebtables -I INPUT 1 -d BGA -i swp51 -j DROP
+    - command: ebtables -I INPUT 1 -d BGA -i {{nodes[ansible_hostname]["stp_port"]}} -j DROP
+    - pause:
+        second: 10
+    - command: ebtables -D INPUT 1
 
-- hosts: spine01
-  gather_facts: no
-  become: yes
-  tasks:
-    - command: ebtables -I INPUT 1 -d BGA -i swp1 -j DROP
+# - hosts: spine01
+#   gather_facts: no
+#   become: yes
+#   tasks:
+#     - command: ebtables -I INPUT 1 -d BGA -i swp1 -j DROP
