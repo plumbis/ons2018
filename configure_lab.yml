@@ -29,5 +29,5 @@
   tasks:
     - command: ebtables -I INPUT 1 -d BGA -i {{nodes[ansible_hostname]["stp_port"]}} -j DROP
     - pause:
-        minutes: 3
+        seconds: 70
     - command: ebtables -D INPUT 1
