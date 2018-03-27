@@ -1,22 +1,9 @@
 ---
-- hosts: leaf01
+- hosts: leaf01, spine01
   gather_facts: no
+  become: yes
   tasks:
-    - shell: "(bash /home/cumulus/stp_killer.sh &)"
-      async: 10
-      poll: 0
-
-- hosts: server01
-  gather_facts: no
-  tasks:
-    - command: ping -c 1 192.168.1.200
-      ignore_errors: yes
-  
-- hosts: netq-ts
-  gather_facts: no
-  tasks:
-    - command: netq leaf01 show stp topology
-      register: netq
-
-    - debug: 
-        msg: "{{ netq }}"
+    - command: ebtables -I INPUT 1 -d BGA -i {{nodes[ansible_hostname]["stp_port"]}} -j DROP
+    - pause:
+        seconds: 70
+    - command: ebtables -D INPUT 1
